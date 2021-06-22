@@ -97,8 +97,8 @@ class RestaurantDetailPage extends StatelessWidget {
                 direction: Axis.horizontal,
                 children: listMenus
                     .map((food) => Container(
-                        width: 90.w,
-                        height: 90.w,
+                        width: 100.w,
+                        height: 80.w,
                         decoration: BoxDecoration(
                             color: Colors.teal,
                             borderRadius: BorderRadius.circular(5)),

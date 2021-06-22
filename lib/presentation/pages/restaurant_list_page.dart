@@ -58,13 +58,10 @@ class _RestaurantListPageState extends State<RestaurantListPage> {
               builder: (context, state) {
                 if (state is RestaurantDataLoaded) {
                   sourceList = state.restaurantModel.listRestaurant;
-                  return Padding(
-                    padding: EdgeInsets.only(top: 10.h),
-                    child: (searchResult.isNotEmpty &&
-                            textEditingController.text.isNotEmpty)
-                        ? _buildRestaurantList(searchResult)
-                        : _buildRestaurantList(sourceList),
-                  );
+                  return (searchResult.isNotEmpty &&
+                          textEditingController.text.isNotEmpty)
+                      ? _buildRestaurantList(searchResult)
+                      : _buildRestaurantList(sourceList);
                 } else if (state is RestaurantDataLoading) {
                   return Center(child: CircularProgressIndicator());
                 } else if (state is RestaurantErrorLoaded) {
@@ -116,7 +113,7 @@ class _RestaurantListPageState extends State<RestaurantListPage> {
                 tag: listRestaurant[index].id,
                 child: Image.network(
                   listRestaurant[index].pictureId.toString(),
-                  width: 120.w,
+                  width: 100.w,
                   fit: BoxFit.cover,
                 ),
               ),

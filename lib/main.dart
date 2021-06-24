@@ -9,10 +9,12 @@ import 'business_logic/bloc/restaurant_bloc.dart';
 import 'data/model/restaurant_model.dart';
 
 void main() {
-  runApp(BlocProvider(
-    create: (context) => RestaurantBloc(context)..add(RestaurantLoadData()),
-    child: MyApp(),
-  ));
+  runApp(
+    BlocProvider(
+      create: (context) => RestaurantBloc(context)..add(RestaurantLoadData()),
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
